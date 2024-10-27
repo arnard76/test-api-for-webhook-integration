@@ -2,9 +2,18 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 3000
 
+let data = []
+
 app.get('/', (req, res) => {
   res.json({
-    message: 'Hello, world!',
+    data: data.toString(),
+  })
+})
+
+app.post('/', (req, res) => {
+  data.push(req.body)
+  res.json({
+    message: 'Added packet',
   })
 })
 
