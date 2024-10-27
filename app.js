@@ -6,7 +6,7 @@ let data = []
 
 app.get('/', (req, res) => {
   res.json({
-    data: data.toString(),
+    data: JSON.stringify(data),
   })
 })
 
