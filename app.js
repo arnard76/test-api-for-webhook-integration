@@ -1,6 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
-import ttnWebhooksRouter from "./ttnWebhooks";
+import ttnWebhooksRouter from "./ttnWebhooks.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
