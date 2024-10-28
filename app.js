@@ -1,22 +1,26 @@
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 3000
+import express from "express";
+import bodyParser from "body-parser";
 
-let data = []
+const app = express();
+const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
+let data = [];
+
+app.use(bodyParser.json());
+
+app.get("/", (req, res) => {
   res.json({
     data: JSON.stringify(data),
-  })
-})
+  });
+});
 
-app.post('/', (req, res) => {
-  data.push(req.body)
+app.post("/", (req, res) => {
+  data.push(req.body);
   res.json({
-    message: 'Added packet',
-  })
-})
+    message: "Added packet",
+  });
+});
 
 app.listen(port, () => {
-  console.log(`App is listening on port ${port}`)
-})
+  console.log(`App is listening on port ${port}`);
+});
