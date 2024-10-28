@@ -1,5 +1,5 @@
 import express from "express";
-const ttnWebhooksRouter = express.Router();
+const ttnWebhooksRouter = express.Router({ mergeParams: true });
 
 let data = {};
 
