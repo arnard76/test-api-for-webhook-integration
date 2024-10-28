@@ -34,4 +34,11 @@ ttnWebhooksRouter.post("/", (req, res) => {
   });
 });
 
+ttnWebhooksRouter.get("/:applicationName/clear", (req, res) => {
+  data[req.params.applicationName] = [];
+  res.json({
+    message: "Cleared all packets",
+  });
+});
+
 export default ttnWebhooksRouter;
