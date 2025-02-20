@@ -71,7 +71,7 @@ ttnWebhooksRouter.post("/", (req, res) => {
 
 ttnWebhooksRouter.get("/clear", (req, res) => {
   packets[req.params.applicationName] = [];
-  requests[req.params.applicationName] = [parseImportantRequestDetails(req)];
+  requests[req.params.applicationName] = [];
   res.json({
     message: "Cleared all packets",
   });
